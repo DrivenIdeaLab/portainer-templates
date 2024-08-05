@@ -8,7 +8,7 @@
 </p>
 
 > **TL;DR** Under Settings → App Templates in your Portainer GUI, paste this URL:<br>
-> `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`<br>
+> `https://raw.githubusercontent.com/DrivenIdeaLab/portainer-templates/main/templates.json`<br>
 
 
 <details>
@@ -33,7 +33,7 @@
 
 In [Portainer](https://www.portainer.io/), [App Templates](https://docs.portainer.io/user/docker/templates) enable you to easily deploy services with a predetermined configuration, while allowing you to customize options through the web UI. While Portainer ships with some default templates (see [portainer/templates](https://github.com/portainer/templates)), it's often helpful to have 1-click access to many more apps + stacks, without having to constantly switch template sources.
 
-This repo combines app templates from several [sources](#sources), to create a ready-to-go [template file](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) containing all the apps you'll ever need. It's also possible to self-host, as well as combine with your own custom templates.
+This repo combines app templates from several [sources](#sources), to create a ready-to-go [template file](https://github.com/DrivenIdeaLab/portainer-templates/blob/main/templates.json) containing all the apps you'll ever need. It's also possible to self-host, as well as combine with your own custom templates.
 
 You can browse all supported apps and stacks and see stats, config options and stand-alone installation commands for each, at [portainer-templates.as93.net](https://portainer-templates.as93.net)
 
@@ -78,19 +78,19 @@ If you're using your own template file, but don't want to fork this repository, 
 
 ## Editing
 
-The `template.json` file is generated using the scripts in [`lib`](https://github.com/Lissy93/portainer-templates/tree/main/lib), using GitHub Actions.
+The `template.json` file is generated using the scripts in [`lib`](https://github.com/DrivenIdeaLab/portainer-templates/tree/main/lib), using GitHub Actions.
 Running the `make` command will download all listed sources, parse them, and combine them with anything in the sources dir, outputting the `templates.json` file.<br>
-_So, you only need to edit **either** the [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv) file, **or** add your templates directly into the [`sources/`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory._
+_So, you only need to edit **either** the [`sources.csv`](https://github.com/DrivenIdeaLab/portainer-templates/blob/main/sources.csv) file, **or** add your templates directly into the [`sources/`](https://github.com/DrivenIdeaLab/portainer-templates/tree/main/sources) directory._
 
 ### Adding a new Source
-If you're maintaining your own list of Portainer templates, and would like them to be included, just add the URL to your template.json file to [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv), along with a name.
+If you're maintaining your own list of Portainer templates, and would like them to be included, just add the URL to your template.json file to [`sources.csv`](https://github.com/DrivenIdeaLab/portainer-templates/blob/main/sources.csv), along with a name.
 When the action runs, it will download the content, parse it and add it to the final template.
 
 ### Adding a Template / Template list
-Alternatively, place your template file within the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`. Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
+Alternatively, place your template file within the [`sources`](https://github.com/DrivenIdeaLab/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`. Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Validating Templates
-There is a schema defined in [`Schema.json`](https://github.com/Lissy93/portainer-templates/blob/main/Schema.json), which can be used to validate any Portainer template.
+There is a schema defined in [`Schema.json`](https://github.com/DrivenIdeaLab/portainer-templates/blob/main/Schema.json), which can be used to validate any Portainer template.
 Run `make validate` to ensure your template conforms to Portainer's App Template [specification](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Maintaining your own Templates
