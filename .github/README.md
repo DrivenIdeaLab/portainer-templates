@@ -66,7 +66,7 @@ You'll then be able to pass Portainer the template file located at `http://[host
 Alternatively, you can build the image yourself locally, with the following commands (if you're using your own fork, don't forget to switch `lissy93` out for your username!)
 
 ```bash
-git clone https://github.com/lissy93/portainer-templates.git
+git clone https://github.com/DrivenIdeaLab/portainer-templates.git
 cd portainer-templates
 docker build -t portainer-templates .
 docker run -d -p "8080:80" portainer-templates
